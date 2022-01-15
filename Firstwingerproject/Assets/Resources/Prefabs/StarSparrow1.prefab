@@ -455,6 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveVector: {x: 0, y: 0, z: 0}
+  Speed: 0
 --- !u!1 &4796577061201364546
 GameObject:
   m_ObjectHideFlags: 0

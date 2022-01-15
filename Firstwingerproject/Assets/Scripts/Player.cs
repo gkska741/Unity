@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     Vector3 MoveVector = Vector3.zero;
 
+    [SerializeField]
+    float Speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +23,21 @@ public class Player : MonoBehaviour
     }
     void UpdateMove()
     {
+        if (MoveVector.sqrMagnitude == 0)
+        {
+            return;
+        }
+        MoveVector = AdjustMoveVector(MoveVector);
 
+        transform.position += MoveVector;
     }
     public void ProcessInput(Vector3 moveDirection)
     {
+        MoveVector = moveDirection * Speed * Time.deltaTime;
+    }
 
+    Vector3 AdjustMoveVector(Vector3 moveVector)
+    {
+        return moveVector;
     }
 }
